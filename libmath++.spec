@@ -65,8 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-# isn't COPYING just GPL?
-%doc AUTHORS ChangeLog NEWS README TODO COPYING
+%doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
