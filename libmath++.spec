@@ -6,6 +6,7 @@ Release:	1
 License:	LGPL/GPL
 Group:		Libraries
 Source0:	http://www.surakware.net/pub/unstable/releases/libmath++/%{name}-%{version}.tar.gz
+# Source0-md5:	f7d1bd1059b9620e5e9c8e2204430d3c
 URL:		http://www.surakware.net/projects/libmath++/index.xml
 BuildRequires:	autoconf
 BuildRequires:	automake
