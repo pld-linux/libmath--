@@ -1,5 +1,5 @@
-Summary:	A template based math library, written in C++, for symbolic and numeric calculus applications
-Summary(pl):	Matematyczna biblioteka szablonów napisana w C++ dla symbolicznych i numerycznych aplikacji
+Summary:	A template based math C++ library for symbolic and numeric calculus applications
+Summary(pl):	Matematyczna biblioteka szablonów w C++ dla aplikacji symbolicznych i numerycznych
 Name:		libmath++
 Version:	0.0.3
 Release:	1
@@ -18,7 +18,7 @@ symbolic and numeric calculus applications.
 
 %description -l pl
 Libmath++ to matematyczna biblioteka szablonów napisana w C++ dla
-symbolicznych i numerycznych ap likacji.
+aplikacji symbolicznych i numerycznych.
 
 %package devel
 Summary:	libmath++ header files
@@ -65,6 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+# isn't COPYING just GPL?
 %doc AUTHORS ChangeLog NEWS README TODO COPYING
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
