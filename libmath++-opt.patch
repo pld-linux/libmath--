@@ -1,0 +1,24 @@
+diff -urN libmath++-0.0.3.orig/examples/Makefile.in libmath++-0.0.3/examples/Makefile.in
+--- libmath++-0.0.3.orig/examples/Makefile.in	2004-01-25 19:48:53.000000000 +0100
++++ libmath++-0.0.3/examples/Makefile.in	2004-01-25 19:49:25.000000000 +0100
+@@ -92,7 +92,7 @@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ 
+-CXXFLAGS = -pedantic -ansi -Wall -Wno-long-long
++CXXFLAGS = -pedantic -ansi -Wall $(OPT) -Wno-long-long
+ 
+ LIBS = ../math++/libmath++.la
+ 
+diff -urN libmath++-0.0.3.orig/math++/Makefile.in libmath++-0.0.3/math++/Makefile.in
+--- libmath++-0.0.3.orig/math++/Makefile.in	2004-01-25 19:48:53.000000000 +0100
++++ libmath++-0.0.3/math++/Makefile.in	2004-01-25 19:49:59.000000000 +0100
+@@ -92,7 +92,7 @@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ 
+-CXXFLAGS = -pedantic -ansi -Wall -Wno-long-long
++CXXFLAGS = -pedantic -ansi -Wall $(OPT) -Wno-long-long
+ 
+ lib_LTLIBRARIES = libmath++.la
+ 
