@@ -2,14 +2,13 @@ Summary:	A template based math C++ library for symbolic and numeric calculus app
 Summary(pl):	Matematyczna biblioteka szablonów w C++ dla aplikacji symbolicznych i numerycznych
 Name:		libmath++
 Version:	0.0.3
-Release:	1
+Release:	2
 License:	LGPL/GPL
 Group:		Libraries
 Source0:	http://www.surakware.net/pub/unstable/releases/libmath++/%{name}-%{version}.tar.gz
 # Source0-md5:	f7d1bd1059b9620e5e9c8e2204430d3c
+Patch:		%{name}-opt.patch
 URL:		http://www.surakware.net/projects/libmath++/index.xml
-BuildRequires:	autoconf
-BuildRequires:	automake
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -47,16 +46,21 @@ Statyczna biblioteka libmath++.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure
 
-%{__make}
+%{__make} \
+	OPT="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
+
+cp -rf examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -78,3 +82,4 @@ rm -rf $RPM_BUILD_ROOT
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
+%{_examplesdir}/%{name}-%{version}
