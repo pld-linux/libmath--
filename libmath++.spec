@@ -5,10 +5,10 @@ Version:	0.0.3
 Release:	2
 License:	LGPL/GPL
 Group:		Libraries
-Source0:	http://www.surakware.net/pub/unstable/releases/libmath++/%{name}-%{version}.tar.gz
+Source0:	http://upstream.trapni-akane.org/libmath++/%{name}-%{version}.tar.gz
 # Source0-md5:	f7d1bd1059b9620e5e9c8e2204430d3c
 Patch:		%{name}-opt.patch
-URL:		http://www.surakware.net/projects/libmath++/index.xml
+URL:		http://upstream.trapni-akane.org/libmath++/
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -24,7 +24,7 @@ aplikacji symbolicznych i numerycznych.
 Summary:	libmath++ header files
 Summary(pl):	Pliki nag³ówkowe libmath++
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 libmath++ header files.
@@ -36,7 +36,7 @@ Pliki nag³ówkowe libmath++.
 Summary:	libmath++ static library
 Summary(pl):	Statyczna biblioteka libmath++
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 libmath++ static library.
@@ -58,7 +58,8 @@ Statyczna biblioteka libmath++.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 cp -rf examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
@@ -78,8 +79,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_includedir}/math++
+%{_examplesdir}/%{name}-%{version}
 
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
-%{_examplesdir}/%{name}-%{version}
