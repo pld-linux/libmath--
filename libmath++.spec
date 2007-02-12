@@ -1,5 +1,5 @@
 Summary:	A template based math C++ library for symbolic and numeric calculus applications
-Summary(pl):	Matematyczna biblioteka szablon體 w C++ dla aplikacji symbolicznych i numerycznych
+Summary(pl.UTF-8):   Matematyczna biblioteka szablon贸w w C++ dla aplikacji symbolicznych i numerycznych
 Name:		libmath++
 Version:	0.0.3
 Release:	2
@@ -16,32 +16,32 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Libmath++ is a template based math library, written in C++, for
 symbolic and numeric calculus applications.
 
-%description -l pl
-Libmath++ to matematyczna biblioteka szablon體 napisana w C++ dla
+%description -l pl.UTF-8
+Libmath++ to matematyczna biblioteka szablon贸w napisana w C++ dla
 aplikacji symbolicznych i numerycznych.
 
 %package devel
 Summary:	libmath++ header files
-Summary(pl):	Pliki nag丑wkowe libmath++
+Summary(pl.UTF-8):   Pliki nag艂贸wkowe libmath++
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 libmath++ header files.
 
-%description devel -l pl
-Pliki nag丑wkowe libmath++.
+%description devel -l pl.UTF-8
+Pliki nag艂贸wkowe libmath++.
 
 %package static
 Summary:	libmath++ static library
-Summary(pl):	Statyczna biblioteka libmath++
+Summary(pl.UTF-8):   Statyczna biblioteka libmath++
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 libmath++ static library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka libmath++.
 
 %prep
