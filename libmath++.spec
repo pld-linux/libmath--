@@ -1,5 +1,5 @@
 Summary:	A template based math C++ library for symbolic and numeric calculus applications
-Summary(pl.UTF-8):   Matematyczna biblioteka szablonów w C++ dla aplikacji symbolicznych i numerycznych
+Summary(pl.UTF-8):	Matematyczna biblioteka szablonów w C++ dla aplikacji symbolicznych i numerycznych
 Name:		libmath++
 Version:	0.0.3
 Release:	2
@@ -22,7 +22,7 @@ aplikacji symbolicznych i numerycznych.
 
 %package devel
 Summary:	libmath++ header files
-Summary(pl.UTF-8):   Pliki nagłówkowe libmath++
+Summary(pl.UTF-8):	Pliki nagłówkowe libmath++
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -34,7 +34,7 @@ Pliki nagłówkowe libmath++.
 
 %package static
 Summary:	libmath++ static library
-Summary(pl.UTF-8):   Statyczna biblioteka libmath++
+Summary(pl.UTF-8):	Statyczna biblioteka libmath++
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
