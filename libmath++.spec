@@ -1,14 +1,18 @@
 Summary:	A template based math C++ library for symbolic and numeric calculus applications
 Summary(pl.UTF-8):	Matematyczna biblioteka szablonów w C++ dla aplikacji symbolicznych i numerycznych
 Name:		libmath++
-Version:	0.0.3
-Release:	2
+Version:	0.0.4
+Release:	1
 License:	LGPL/GPL
 Group:		Libraries
-Source0:	http://upstream.trapni-akane.org/libmath++/%{name}-%{version}.tar.gz
-# Source0-md5:	f7d1bd1059b9620e5e9c8e2204430d3c
+#Source0:	http://upstream.trapni-akane.org/libmath++/%{name}-%{version}.tar.gz
+Source0:	http://ftp.debian.org/debian/pool/main/libm/libmath++/%{name}_%{version}.orig.tar.gz
+# Source0-md5:	ef2933a45df4def2d0a37f560399c9ad
 Patch:		%{name}-opt.patch
 URL:		http://upstream.trapni-akane.org/libmath++/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -49,6 +53,11 @@ Statyczna biblioteka libmath++.
 %patch0 -p1
 
 %build
+%{__libtoolize}
+%{__aclocal}
+%{__autoheader}
+%{__automake}
+%{__autoconf}
 %configure
 
 %{__make} \
@@ -72,15 +81,16 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/libmath++.so.*.*
+%attr(755,root,root) %ghost %{_libdir}/libmath++.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/libmath++.so
+%{_libdir}/libmath++.la
 %{_includedir}/math++
 %{_examplesdir}/%{name}-%{version}
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libmath++.a
