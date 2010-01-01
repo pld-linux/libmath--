@@ -8,7 +8,7 @@ Group:		Libraries
 #Source0:	http://upstream.trapni-akane.org/libmath++/%{name}-%{version}.tar.gz
 Source0:	http://ftp.debian.org/debian/pool/main/libm/libmath++/%{name}_%{version}.orig.tar.gz
 # Source0-md5:	ef2933a45df4def2d0a37f560399c9ad
-Patch:		%{name}-opt.patch
+Patch0:		%{name}-opt.patch
 URL:		http://upstream.trapni-akane.org/libmath++/
 BuildRequires:	autoconf
 BuildRequires:	automake
