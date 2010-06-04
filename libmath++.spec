@@ -12,8 +12,8 @@ Patch0:		%{name}-opt.patch
 URL:		http://upstream.trapni-akane.org/libmath++/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool
 BuildRequires:	libstdc++-devel
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
